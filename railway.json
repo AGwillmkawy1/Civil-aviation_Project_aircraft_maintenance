@@ -1,0 +1,8 @@
+{
+  "builder": "nixpacks",
+  "nixpacks": {
+    "id": "nixpacks",
+    "buildImage": "ghcr.io/railwayapp/nixpacks:latest",
+    "configPath": "$CONFIG_FILE"
+  }
+}
