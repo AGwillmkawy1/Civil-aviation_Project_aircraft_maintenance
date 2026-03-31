@@ -1,0 +1,125 @@
+# Python Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.hypothesis/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+logs/
+
+# Large files (comment out if needed)
+*.pkl
+*.joblib
+*.h5
+*.model
+*.pth
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Node.js / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+
+# Build outputs
+build/
+dist/
+.next/
+out/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
+*~
+*.bak
+
+# Camera Cache (if using on embedded systems)
+.cache/
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Secret files
+secrets/
+*.key
+*.pem
+*.pfx
+
+# Deployment
+deployment/live/
+production/
+staging/
+
+# Coverage
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+
+# Misc
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/

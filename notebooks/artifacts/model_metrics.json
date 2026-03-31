@@ -1,0 +1,43 @@
+{
+  "model_type": "Logistic Regression",
+  "training_date": "2026-03-30T18:27:35.997167",
+  "dataset_info": {
+    "total_samples": 6000,
+    "features": 12,
+    "feature_names": [
+      "flight_cycles",
+      "engine_hours",
+      "temperature_sensor_1",
+      "temperature_sensor_2",
+      "vibration_sensor",
+      "pressure_sensor",
+      "fault_code_count",
+      "last_maintenance_cycles",
+      "maintenance_log_flag",
+      "ambient_temperature",
+      "humidity",
+      "failure_within_10_cycles"
+    ],
+    "target_variable": "sensor_drift_flag",
+    "class_imbalance_ratio": "34.09:1"
+  },
+  "test_metrics": {
+    "recall": 0.9876399959640803,
+    "precision": 0.5230769230769231,
+    "f1_score": 0.6868686868686869,
+    "roc_auc": 0.9876399959640803,
+    "accuracy": 0.9741666666666666
+  },
+  "confusion_matrix": {
+    "true_negatives": 1135,
+    "false_positives": 31,
+    "false_negatives": 0,
+    "true_positives": 34
+  },
+  "model_parameters": {
+    "model_class": "Logistic Regression",
+    "handling_imbalance": "SMOTE on training data + class_weight=\"balanced\"",
+    "train_test_split": "80-20 stratified",
+    "scaling": "StandardScaler (fit on train, applied to test)"
+  }
+}
