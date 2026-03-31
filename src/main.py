@@ -12,7 +12,7 @@ import logging
 from datetime import datetime
 import traceback
 
-from model import PredictiveMaintenanceModel
+from src.model import PredictiveMaintenanceModel
 
 # ============================================================================
 # LOGGING CONFIGURATION
