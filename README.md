@@ -4,8 +4,8 @@ ML-powered system for predicting aircraft component failures before they occur.
 
 ## 📊 Key Metrics
 - **Recall:** 100% (catches all failures)
-- **Precision:** 62.9% (accurate alerts)
-- **ROC-AUC:** 99.28% (excellent discrimination)
+- **Precision:** 52.3% (accurate alerts)
+- **ROC-AUC:** 98.76% (excellent discrimination)
 - **Model:** Logistic Regression (12 sensor inputs)
 
 ## 🏗️ Architecture
