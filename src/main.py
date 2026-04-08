@@ -5,12 +5,14 @@ Production-ready API for real-time component failure predictions
 
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, validator
 from typing import List, Dict, Any, Optional
 import logging
 from datetime import datetime
 import traceback
+import os
 
 from src.model import PredictiveMaintenanceModel
 
@@ -160,11 +162,14 @@ async def startup_event():
         logger.info(" Model ready for predictions")
 
 
-@app.get("/", tags=["Health"])
+@app.get("/", tags=["Health"], include_in_schema=False)
 async def root():
-    """Root endpoint - API welcome message"""
+    """Serve the React frontend"""
+    index_path = os.path.join(os.path.dirname(__file__), '..', 'frontend', 'dist', 'index.html')
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
     return {
-        "message": " Aircraft Predictive Maintenance API",
+        "message": "Aircraft Predictive Maintenance API",
         "version": "1.0.0",
         "status": "running",
         "docs": "/docs",
@@ -357,6 +362,15 @@ async def general_exception_handler(request, exc):
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={"status": "error", "detail": "Internal server error"}
     )
+
+
+# ============================================================================
+# STATIC FILES (React Frontend)
+# ============================================================================
+_dist_path = os.path.join(os.path.dirname(__file__), '..', 'frontend', 'dist')
+if os.path.exists(_dist_path):
+    app.mount("/assets", StaticFiles(directory=os.path.join(_dist_path, "assets")), name="assets")
+    logger.info(f"Serving frontend from {_dist_path}")
 
 
 # ============================================================================
