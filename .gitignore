@@ -61,7 +61,7 @@ Thumbs.db
 logs/
 
 # Large files (comment out if needed)
-*.pkl
+# *.pkl  -- model artifacts are small and needed for deployment
 *.joblib
 *.h5
 *.model
